@@ -1,0 +1,11 @@
+[gin]
+port = ":8080"
+    # Mysql
+mysql.dsn = "zzh:123.com@tcp(127.0.0.1:3306)/alarm?charset=utf8"  
+# Redis
+redis.addr = "127.0.0.1:6379"
+redis.password = ""
+redis.db = 0
+
+token.privateKeyPath = "."
+token.validSeconds = 172800 # 2天
