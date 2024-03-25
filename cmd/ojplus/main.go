@@ -63,14 +63,13 @@ func main() {
 	// --Router Init
 	group := engine.Group("")
 	{
-		group.POST("/register", AccountCtrl.CreateUser)
+		group.POST("/user", AccountCtrl.CreateUser)
 		group.GET("/users", AccountCtrl.AllUser)
 		group.GET("/users/:id", AccountCtrl.GetUserByID)
 		group.PATCH("/users/:id", AccountCtrl.UpdateUserByID)
 
 		group.GET("/authtest", AuthCtrl.LoginMiddleware, AuthCtrl.Test)
-		group.POST("/login", AuthCtrl.Login)
-		group.POST("/logout", AuthCtrl.Logout)
+		group.POST("/token", AuthCtrl.Login)
 	}
 	engine.Run(globalConfig.Gin.Port)
 }
